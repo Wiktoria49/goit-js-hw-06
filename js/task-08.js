@@ -7,7 +7,7 @@ function onFormSubmit(event) {
     event.currentTarget.elements.email.value === '' ||
     event.currentTarget.elements.password.value === ''
   ) {
-    return alert('все поля должны быть заполнены');
+    return alert('Wszystkie pola powinny zostać wypełnione');
   }
   const userData = {};
   formData.forEach((value, name) => {
