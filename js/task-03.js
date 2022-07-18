@@ -12,3 +12,16 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+const contCardListItems = document.querySelector('ul.gallery');
+
+const cardListTemplate = ({ url, alt }) => {
+  return `<li class="gallery-list">
+        <img
+          src="${url}",
+          alt="${alt}",
+        />
+      </li>`;
+};
+const markup = images.map(cardListTemplate).join('');
+console.log(markup);
+contCardListItems.insertAdjacentHTML('beforeend', markup);
