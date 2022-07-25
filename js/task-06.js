@@ -1,8 +1,10 @@
-const inputBtn = document.querySelector('input#font-size-control');
-const textString = document.querySelector('span#text');
-
-inputBtn.addEventListener('input', onInputBtnChange);
-textString.style.fontSize = `${inputBtn.value}px`;
-function onInputBtnChange(event) {
-  textString.style.fontSize = `${inputBtn.value}px`;
+const focusInput = document.querySelector("#validation-input")
+focusInput.addEventListener("blur", e => inputHandle(e))
+function inputHandle(e) {
+    console.log(focusInput.getAttribute("data-length"))
+    if (e.target.value.length==focusInput.getAttribute("data-length")) {
+    focusInput.classList.add("valid")
+    } else {
+     focusInput.classList.add("invalid")   
+ }   
 }
